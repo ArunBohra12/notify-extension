@@ -1,0 +1,23 @@
+{
+  "name": "Notify Extension",
+  "version": "1.0.0",
+  "description": "Extension for notify",
+  "manifest_version": 3,
+  "author": "Arun Bohra",
+  "action": {
+    "default_title": "Notify Extension"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["./style.css"],
+      "js": ["./js/content/lead-form.js"]
+    }
+  ],
+  "icons": {
+    "16": "./img/icon.png",
+    "32": "./img/icon.png",
+    "48": "./img/icon.png",
+    "128": "./img/icon.png"
+  }
+}

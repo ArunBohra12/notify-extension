@@ -1,0 +1,35 @@
+:root {
+  --color-primary: #082032;
+  --color-secondary: #2c394b;
+  --color-tirtary: #334756;
+  --color-orange: #ff4c29;
+}
+
+.code-snippet-img {
+  width: 3rem;
+}
+
+.no-display {
+  display: none !important;
+}
+
+.code-icon {
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 999999999999999999;
+}
+
+#codeIconDropDown {
+  display: grid;
+  height: 220px;
+  width: 220px;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-orange);
+}
