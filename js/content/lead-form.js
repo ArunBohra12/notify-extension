@@ -1,15 +1,30 @@
 'use strict';
 
-if (window.location.href.includes('https://mail.notifyvisitors.com/forms/editor/home?formID')) {
-  const hiddenLeadFormEditor = document.querySelector('#discriptionTextArea > div.pb10[style*="display:none"]');
+function showHiddenLeadFormEditor() {
+  const findHiddenScriptEditor = setInterval(() => {
+    const hiddenLeadFormEditor = document.querySelector('#discriptionTextArea > div.pb10[style*="display:none"]');
 
-  if (hiddenLeadFormEditor) {
-    const actionTitle = hiddenLeadFormEditor.querySelector('.textTitleStyle.disInline').textContent;
+    if (hiddenLeadFormEditor) {
+      clearInterval(findHiddenScriptEditor);
+      const actionTitle = hiddenLeadFormEditor.querySelector('.textTitleStyle.disInline').textContent;
 
-    if (actionTitle === 'Custom Script') {
-      hiddenLeadFormEditor.style.display = 'block';
+      if (actionTitle === 'Custom Script') {
+        hiddenLeadFormEditor.style.display = 'block';
+      }
     }
-  }
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(findHiddenScriptEditor);
+  }, 6000);
+}
+
+if (window.location.href.includes('https://mail.notifyvisitors.com/forms/editor/home?formID')) {
+  const descriptionStep = document.querySelector('li[data-step="description"]');
+
+  showHiddenLeadFormEditor();
+
+  descriptionStep && descriptionStep.addEventListener('click', showHiddenLeadFormEditor);
 }
 
 // if (window.location.href.includes('notifyvisitors.com') && window.location.href.includes('editor')) {
