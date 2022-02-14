@@ -1,7 +1,7 @@
 'use strict';
 
 if (window.location.href.includes('https://mail.notifyvisitors.com/forms/editor/home?formID')) {
-  const hiddenLeadFormEditor = document.querySelector('#discriptionTextArea > div:nth-child(5)');
+  const hiddenLeadFormEditor = document.querySelector('#discriptionTextArea > div.pb10[style*="display:none"]');
 
   if (hiddenLeadFormEditor) {
     const actionTitle = hiddenLeadFormEditor.querySelector('.textTitleStyle.disInline').textContent;
